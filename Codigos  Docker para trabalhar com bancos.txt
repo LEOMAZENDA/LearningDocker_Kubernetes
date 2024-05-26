@@ -1,0 +1,45 @@
+MATEIAS DO DOCKER E BANCOS DE DADOS 
+
+
+PARA BANCO SQL SERVER 2022
+
+
+1. 
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+2. 
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Admin123#" -p 1433:1433 --name sqlserver22 --hostname sqlserver22 -d mcr.microsoft.com/mssql/server:2022-latest
+
+FONTE: https://www.youtube.com/watch?v=eTyFKf3MICk	/	https://www.youtube.com/watch?v=eTyFKf3MICk
+
+
+BACKUP DE BANCO - COPIAR O BACKUP DA MAQUINA LOCAL PARA O DOCKER 
+1. 
+cd "C:\_backupsSqlDocker"    		 		=> ESTE COMANDO SELECIONA A PASTA NO DISCO C 
+2. 
+docker cp SADAT_DD.bak sqlserver22:/var/opt/mssql/data 	=> ESTE COMANDO COPIA O ARQUIVO DE BACKUP DA PAQUIA PARA O DOCKER 
+3. 
+FAZER O RESTORE NO SSMS OU NO AZURE 
+
+
+PARA O CONTRARIO, BASTA FAZER 
+
+docker cp sqlserver22:/var/opt/mssql/data/SADAT_DD.bak C:\backup\SADAT_DD.bak
+
+
+FONTE: https://www.youtube.com/watch?v=XHKLi1sA4TY
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+PARA BANCO MySQL
+
+1. 
+docker pull mysql
+
+2.
+docker run --name='mysql' -d -p 3306:3306 mysql/mysql-server 
+
+Comm esse comando a cima ´ra fazer o dowload caso nao tenha a imagem instalada e vai subir o container com o nome mysql e configurar as portas para  3306:3306
+
+
+FONTE: https://hub.docker.com/_/mysql
