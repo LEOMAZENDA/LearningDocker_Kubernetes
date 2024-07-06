@@ -7,7 +7,7 @@ PARA BANCO SQL SERVER 2022
 1. 
 docker pull mcr.microsoft.com/mssql/server:2022-latest
 2. 
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=@Admin123#" -p 1433:1433 --name sqlserver22 --hostname sqlserver22 -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=LV@123" -p 1433:1433 --name sqlserver22 --hostname sqlserver22 -d mcr.microsoft.com/mssql/server:2022-latest
 
 FONTE: https://www.youtube.com/watch?v=eTyFKf3MICk	/	https://www.youtube.com/watch?v=eTyFKf3MICk
 
